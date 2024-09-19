@@ -3,9 +3,892 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>project</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <div class="container-fluid navbar-custom bg-white d-flex align-items-center justify-content-between sticky-top">
+        <div class="container d-flex align-items-center justify-content-between">
+            <!-- <i class="fas fa-bars menu-icon" id="menu-toggle"></i> -->
+            <iconify-icon class="menu-icon"  id="menu-toggle" icon="octicon:three-bars-16"></iconify-icon>
+            <h1 class="brand fw-bold">Cartzilla</h1>
+            
+           <div class="d-none d-lg-flex ">
+            <div class="categories d-flex align-items-center px-5 py-3 rounded-5">
+                <iconify-icon class="fs-5 px-2" icon="ep:menu"></iconify-icon>
+                <span class="fw-normal">Categories</span>
+                <iconify-icon class="ps-4" icon="bytesize:chevron-bottom"></iconify-icon>
+            </div>
+           </div>
+        
+            <div class="search-bar d-flex align-items-center position-relative d-none d-lg-flex">
+                <input class="form-control fw-medium pe-5 w-100 " type="text" placeholder="Search for products">
+                <iconify-icon class="search-icon position-absolute fs-3" icon="humbleicons:search"></iconify-icon>
+           </div>
+            <div class="d-none d-lg-flex">
+                <div class="delivery">
+                    Delivery
+                   <div class="d-flex">
+                    <span class="d-block">Set your address</span>
+                    <iconify-icon class="ps-4" icon="bytesize:chevron-bottom"></iconify-icon>
+                   </div>
+                </div>
+            </div>
+            <div class="icons position-relative">
+                <iconify-icon class="fs-3 mx-2" icon="mynaui:sun"></iconify-icon>
+             <a href="./login.html"><iconify-icon class="fs-3 mx-2" icon="material-symbols:person"></iconify-icon></a>
+                <iconify-icon class="fs-3 position-relative" icon="bitcoin-icons:cart-outline" id="cart-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart"></iconify-icon>
+    <span  class="bg-danger text-white  opacity-75   position-absolute top-0 start-100 translate-middle rounded-5 px-2" id="cart-count">0</span>
+               
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+        <div class="offcanvas-header">
+          <h5 id="offcanvasCartLabel">Your Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul id="cart-items" class="list-group mb-3">
+            <!-- Cart items will be dynamically added here -->
+          </ul>
+          <div class="d-flex justify-content-between">
+            <strong>Total:</strong>
+            <span id="cart-total">$0.00</span>
+          </div>
+        </div>
+      </div>
+    <div class="sidebar" id="sidebar">
+        <div class="d-flex pt-5 justify-content-between"> 
+         
+            <ul class="list-unstyled p-0">
+                <li><a class="text-white text-decoration-none" href="#">Home</a></li>
+                <li><a class="text-white text-decoration-none" href="#">Shop</a></li>
+                <li><a class="text-white text-decoration-none" href="#">About</a></li>
+                <li><a class="text-white text-decoration-none" href="#">Contact</a></li>
+            </ul>
+            <div> <iconify-icon icon="material-symbols:close" class="close-btn fs-3"  id="close-btn"></iconify-icon></div>
+        </div>
+        
+    </div>
+<!-- second navbar -->
+<div class="container d-flex align-items-center py-3 text-nowrap">
+    <div class="d-flex align-items-center me-3">
+        <img src="./images/percentage.png" class="rounded-circle bg-light p-2" width="50" height="50" alt="Percentage symbol">
+        <span class="fw-medium text-black ms-2">Weekly sale</span>
+    </div>
+    <div class="d-flex align-items-center me-3">
+        <img src="./images/th01.png" class="rounded-circle bg-light p-2" width="50" height="50" alt="Vegetables">
+        <span class="fw-medium text-black ms-2">Vegetables</span>
+    </div>
+    <div class="d-flex align-items-center me-3">
+        <img src="./images/th02.png" class="rounded-circle bg-light p-2" width="50" height="50" alt="Easter egg">
+        <span class="fw-medium text-black ms-2">Easter is coming</span>
+    </div>
+    <div class="d-flex align-items-center me-3">
+        <img src="./images/th03.png" class="rounded-circle bg-light p-2" width="50" height="50" alt="Poultry meat">
+        <span class="fw-medium text-black ms-2">Poultry meat</span>
+    </div>
+    <div class="d-flex align-items-center me-3">
+        <img src="./images/th04.png" class="rounded-circle bg-light p-2" width="50" height="50" alt="Fresh fruits">
+        <span class="fw-medium text-black ms-2">Fresh fruits</span>
+    </div>
+    <div class="d-flex align-items-center me-3">
+        <img src="./images/th05.png" class="rounded-circle bg-light p-2" width="50" height="50" alt="St. Patrick's day">
+        <span class="fw-medium text-black ms-2">St. Patrick's day</span>
+    </div>
+    <div class="d-flex align-items-center">
+        <img src="./images/th06.png" class="rounded-circle bg-light p-2" width="50" height="50" alt="Exotic fruits">
+        <span class="fw-medium text-black ms-2">Exotic fruits</span>
+    </div>
+</div>
+<!-- hero-section -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators ">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+<div id="carousel1" class="carousel-inner mt-1">
+    <div class="carousel-item carousel-1-item active position-relative ">
+        <div id="heroRight" class=" text-white container pt-lg-5 pt-md-5 pt-sm-5 position-absolute top-50 start-0 translate-middle-y p-5 ms-lg-5 ">
+           <div class="ms-lg-5 ms-md-5 p-sm-5"> 
+            <p class="ms-lg-5 ms-md-5">🔥 Free shipping - order over </p>
+            <h2 class="display-4 ms-lg-5 pb-2 pb-md-3 pb-lg-4 fw-bold lg">Healthy Food Available <br> to Everyone </h2>
+           <button type="button" id="buttons"  class="btn btn-outline-light btn-close-white rounded-5 py-2 px-3 border border-white ms-lg-5 rounded-0 px-4 text-decoration-none fw-medium">Shop Now</button>
+        </div>
+        </div>
+        <img id="img" class="object-fit-cover h-100 w-100" src="./images/img-2.jfif" class="d-block w-100" alt="...">
+
+    </div>
+    <div id="carousel1" class="carousel-item carousel-1-item position-relative bac">
+        <div id="heroRight" class="text-white container pt-lg-5 pt-md-5 pt-sm-5 position-absolute top-50 start-0 translate-middle-y p-5 ms-lg-5 ">
+            <div class="ms-lg-5 ms-md-5"> 
+             <p class="ms-lg-5 ms-md-5">🥚 Organic products to your table</p>
+             <h2 class="display-4 ms-lg-5 pb-2 pb-md-3 pb-lg-4 fw-bold lg">Organic eggs from <br> home-grown chicken </h2>
+             <button type="button" id="buttons"  class="btn btn-outline-light btn-close-white rounded-5 py-2 px-3 border border-white ms-lg-5 rounded-0 px-4 text-decoration-none fw-medium">Shop now</button>
+            </div>
+         </div>
+
+        <img id="img" class="object-fit-cover h-100 w-100" src="./images/img-3.jfif" class="d-block w-100" alt="...">
+    </div>
+    <div id="carousel1" class="carousel-item carousel-1-item position-relative">
+        <div id="heroRight" class=" text-white container pt-lg-5 pt-md-5 pt-sm-5 position-absolute top-50 start-0 translate-middle-y p-5 ms-lg-5 ">
+            <div class="ms-lg-5 ms-md-5"> 
+             <p class="ms-lg-5 ms-md-5">🥝 Only natural ingredients </p>
+             <h2 class="display-4 ms-lg-5 pb-2 pb-md-3 pb-lg-4 fw-bold lg">Enjoy refreshing <br> summer drink </h2>
+             <button type="button" id="buttons"  class="btn btn-outline-light btn-close-white rounded-5 py-2 px-3 border border-white ms-lg-5 rounded-0 px-4 text-decoration-none fw-medium">Shop now</button>
+            </div>
+         </div>
+        <img id="img" class="object-fit-cover h-100 w-100" src="./images/img-1.jfif" class="d-block w-100" alt="...">
+    </div>
+</div>
+</div>
+<!-- Carousel visible on mobile screens only -->
+<div class="container d-md-none mt-3">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <div class="card py-4 rounded-4 border-0" style="background-color: #ffeef0;">
+                    <div class="card-body">
+                        <p class="card-text">124 products</p>
+                        <h4 class="fw-semibold">Only fresh fish <br> to your table</h4>
+                        <a class="text-dark d-flex align-items-center text-decoration-none pt-3" href="#">
+                            Shop now
+                            <iconify-icon class="mx-1 fs-5" icon="iconamoon:arrow-right-2-light"></iconify-icon>
+                        </a>
+                    </div>
+                    <img class="img-fluid" alt="Fresh blueberries with green leaves" height="200" src="./images/card 01.png" width="300" />
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <div class="card py-4 rounded-4 border-0" style="background-color: #f8f9fa;">
+                    <div class="card-body">
+                        <p class="card-text">97 products</p>
+                        <h4 class="fw-semibold">Products for <br> Easter table</h4>
+                        <a class="text-dark d-flex align-items-center text-decoration-none pt-3" href="#">
+                            Shop now
+                            <iconify-icon class="mx-1 fs-5" icon="iconamoon:arrow-right-2-light"></iconify-icon>
+                        </a>
+                    </div>
+                    <img alt="Fresh blueberries with green leaves" height="200" src="./images/card 02.png" width="300" />
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card py-4 rounded-4 border-0" style="background-color: #fdeaf0;">
+                    <div class="card-body">
+                        <p class="card-text">28 products</p>
+                        <h4 class="fw-semibold">Berries from <br> the garden</h4>
+                        <a class="text-dark d-flex align-items-center text-decoration-none pt-3" href="#">
+                            Shop now
+                            <iconify-icon class="mx-1 fs-5" icon="iconamoon:arrow-right-2-light"></iconify-icon>
+                        </a>
+                    </div>
+                    <img alt="Fresh blueberries with green leaves" height="200" src="./images/card 03.png" width="300" />
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+
+<!-- Divs visible on desktop screens only -->
+<div class="container mt-5 d-none d-md-block">
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card py-4 rounded-4 border-0" style="background-color: #ffeef0;">
+                <div class="card-body">
+                    <p class="card-text">124 products</p>
+                    <h4 class="fw-semibold">Only fresh fish <br> to your table</h4>
+                    <a class="text-dark d-flex align-items-center text-decoration-none pt-3" href="#">
+                        Shop now
+                        <iconify-icon class="mx-1 fs-5" icon="iconamoon:arrow-right-2-light"></iconify-icon>
+                    </a>
+                </div>
+                <img class="img-fluid" alt="Fresh blueberries with green leaves" height="200" src="./images/card 01.png" width="300" />
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card py-4 rounded-4 border-0" style="background-color: #f8f9fa;">
+                <div class="card-body">
+                    <p class="card-text">97 products</p>
+                    <h4 class="fw-semibold">Products for <br> Easter table</h4>
+                    <a class="text-dark d-flex align-items-center text-decoration-none pt-3" href="#">
+                        Shop now
+                        <iconify-icon class="mx-1 fs-5" icon="iconamoon:arrow-right-2-light"></iconify-icon>
+                    </a>
+                </div>
+                <img alt="Fresh blueberries with green leaves" height="200" src="./images/card 02.png" width="300" />
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card py-4 rounded-4 border-0" style="background-color: #fdeaf0;">
+                <div class="card-body">
+                    <p class="card-text">28 products</p>
+                    <h4 class="fw-semibold">Berries from <br> the garden</h4>
+                    <a class="text-dark d-flex align-items-center text-decoration-none pt-3" href="#">
+                        Shop now
+                        <iconify-icon class="mx-1 fs-5" icon="iconamoon:arrow-right-2-light"></iconify-icon>
+                    </a>
+                </div>
+                <img alt="Fresh blueberries with green leaves" height="200" src="./images/card 03.png" width="300" />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- products -->
+<section class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12 mt-5 pt-2">
+            <div>
+                <h4 class="fw-bold">Categories</h4>
+            </div>
+            <hr>
+            <div class="category-item d-flex align-items-center ">
+                <div class=""> <img class="bg-light rounded-5 p-1 mx-2" alt="Bakery &amp; bread" height="50"
+                        src="./images/bread.png" width="50" />
+                </div>
+                <div>
+
+                    <div class="flex-column d-flex align-items-center  ">
+                        <span class="fw-bold">Bakery & bread</span>
+                    </div>
+
+                    <span class="ms-2 opacity-50"> 230 products</span>
+
+                </div>
+
+            </div>
+            <div class="d-flex align-items-center mt-4">
+                <img class="bg-light rounded-5 p-1 mx-2" alt="Vegetables" height="50" src="./images/vegitable.png"
+                    width="50" />
+                <div class="d-flex flex-column">
+
+                    <span class="fw-bold ms-2"> Vegetables
+                    </span>
+                    <span class="ms-2 opacity-50">180 products</span>
+
+
+                </div>
+            </div>
+            <div class="category-item d-flex align-items-center mt-4">
+                <img class="bg-light rounded-5 p-1 ms-1" alt="Fresh fruits" height="50" src="./images/fruit.png"
+                    width="50" />
+                <div class="d-flex flex-column">
+
+                    <span class="fw-bold ms-2">Fresh fruits</span>
+
+
+                    <span class="ms-2 opacity-50"> 205 products</span>
+                </div>
+            </div>
+            <div class="category-item d-flex align-items-center mt-4">
+                <img class="bg-light rounded-5 p-1 ms-1" alt="Meet Italian dinner" height="50"
+                    src="./images/meet-italian.png" width="50" />
+                <div class="d-flex flex-column">
+
+
+                    <span class="fw-bold ms-2"> Meet Italian dinner</span>
+
+                    <span class="ms-2 opacity-50"> 309 products</span>
+
+                </div>
+            </div>
+            <div class="category-item d-flex align-items-center mt-4">
+                <img class="bg-light rounded-5 p-1 ms-1" alt="Beverages" height="50" src="./images/beverages.png"
+                    width="50" />
+                <div class="d-flex flex-column">
+
+                    <span class="fw-bold ms-2"> Beverages</span>
+
+                    <span class="ms-2 opacity-50">372 products</span>
+
+
+                </div>
+            </div>
+            <div class="category-item d-flex align-items-center mt-4">
+                <img class="bg-light rounded-5 p-1 ms-1" alt="Meat products" height="50"
+                    src="./images/meet-product.png" width="50" />
+                <div class="d-flex flex-column">
+
+                    <span class="fw-bold ms-2"> Meat products</span>
+
+
+
+                    <span class="ms-2 opacity-50">124 products</span>
+                </div>
+            </div>
+            <div class="category-item d-flex align-items-center mt-4">
+                <img class="bg-light rounded-5 p-1 ms-1" alt="Sauces and ketchup" height="50"
+                    src="./images/souces-kacheup.png" />
+                <div class="d-flex flex-column">
+
+                    <span class="fw-bold ms-2">Sauces and ketchup</span>
+
+
+                    <span class="ms-2 opacity-50">219 products</span>
+                </div>
+            </div>
+            <div class="category-item d-flex align-items-center mt-4">
+                <img class="bg-light rounded-5 p-1 ms-1" alt="Dairy and eggs" height="50" src="./images/dairy.png"
+                    width="50" />
+                <div class="d-flex flex-column">
+
+                    <span class="fw-bold ms-2">Dairy and eggs</span>
+
+                    <span class="
+                   ms-2 opacity-50">146 products</span>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- poduct-section -->
+
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="d-flex justify-content-between align-items-center mb-lg-2 mt-md-5 mt-sm-5">
+                <h4>
+                    Popular products
+                </h4>
+                <a class="text-muted" href="#">
+                    View all
+                </a>
+            </div>
+            <hr>
+            <div class="d-flex flex-wrap">
+
+                <!-- 01 -->
+                <div class="col-6 col-md-3 position-relative">
+                    <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                    <img class="img-fluid" height="200px" src="./images/cart-01.png" width="200px" />
+                    <div class="fw-bold">$2.15</div>
+                    <div class="mt-2" id="underline">Muesli Fitness Energy,<br> gluten free</div>
+                    <div class="mt-1 opacity-50">500g </div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="favorite"><i class="far fa-heart"></i></div>
+                        <button style="background-color:#F5F7F8;" id="addtocart"
+                            class="add-to-cart border-0 ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                            +</button>
+                    </div>
+                </div>
+                <!-- 02 -->
+                <div class="col-6 col-md-3 position-relative">
+                    <div class="d-flex justify-content-between">
+                        <div class="bg-danger w-25 text-white rounded-2 ps-2 ">-30%</div>
+                        <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                    </div>
+                    <img class="img-fluid" height="200" src="./images/cart-02.png" width="200" />
+
+                    <div class="fw-bold">$3.12 <span class="opacity-25 text-decoration-line-through">$4.05</span>
+                    </div>
+
+                    <div class="mt-2" id="underline">Fresh orange Klementina, <br> Spain</div>
+                    <div class="mt-1 opacity-50">1kg</div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="favorite"><i class="far fa-heart"></i></div>
+                        <button style="background-color: #F5F7F8;" id="addtocart"
+                            class="add-to-cart border-0 ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                            +</button>
+                    </div>
+                </div>
+                <!-- 03 -->
+                <div class="col-6 col-md-3 position-relative">
+                    <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                    <img class="img-fluid" height="200" src="./images/cart-03.png" width="200" />
+                    <div class="fw-bold">$0.80</div>
+                    <div class="mt-3" id="underline">Pepsi soda classic, can</div>
+                    <div class="mt-3 opacity-50"><span>330ml</span></div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="favorite"><i class="far fa-heart"></i></div>
+                        <button style="background-color: #F5F7F8;" id="addtocart"
+                            class="add-to-cart border-0 ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                            +</button>
+                    </div>
+                </div>
+                <!-- 04 -->
+                <div class="col-6 col-md-3 position-relative">
+                    <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                    <img class="img-fluid" height="200" src="./images/cart-04.png" width="200" />
+                    <div class="fw-bold">$2.99</div>
+                    <div class="mt-2" id="underline">Mozzarella mini cheese <br> Granaloro</div>
+                    <div class="mt-2 opacity-50">250g</div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="favorite"><i class="far fa-heart"></i></div>
+                        <button style="background-color: #F5F7F8;" id="addtocart"
+                            class="add-to-cart ms-3 border-0 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                            +</button>
+                    </div>
+                </div>
+                <!-- 05 -->
+                <div class="col-6 col-md-3 position-relative">
+                    <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                    <img class="img-fluid" height="200px" src="./images/cart-05.png" width="200px" />
+                    <div class="fw-bold">$1.24</div>
+                    <div class="mt-4" id="underline">Coconut, Indonesia</div>
+                    <div class="mt-3 opacity-50">1 coconut</div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="favorite"><i class="far fa-heart"></i></div>
+                        <button style="background-color:#F5F7F8;" id="addtocart"
+                            class="add-to-cart border-0 ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                            +</button>
+                    </div>
+                </div>
+                <!-- 06 -->
+                <div class="col-6 col-md-3 position-relative">
+                    <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                    <img class="img-fluid" width="200px" height="200px" src="./images/cart-06.png" />
+                    <div class="fw-bold">$3.95</div>
+                    <div class="mt-3" id="underline">Pesto sauce Barilla with <br> parmesan and basil</div>
+                    <div class="mt-2 opacity-50">200g</div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="favorite"><i class="far fa-heart"></i></div>
+                        <button style="background-color: #F5F7F8;" id="addtocart"
+                            class="border-0 add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                            +</button>
+                    </div>
+                </div>
+                <!-- 07 -->
+                <div class="col-6 col-md-3 position-relative">
+                    <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                    <img class="img-fluid" height="200" src="./images/cart-07.png" width="200" />
+                    <div class="fw-bold">$1.99</div>
+                    <div class="mt-4" id="underline">Fresh mango, Spain</div>
+                    <div class="mt-4 opacity-50">1 mango</div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="favorite"><i class="far fa-heart"></i></div>
+                        <button style="background-color:#F5F7F8;" id="addtocart"
+                            class="add-to-cart ms-3 border-0 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                            +</button>
+                    </div>
+                </div>
+                <!-- 08 -->
+                <div class="col-md-3 col-6    position-relative">
+                    <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                    <img class="img-fluid" height="200" src="./images/cart-08.png" width="200" />
+                    <div class="fw-bold"> $2.40 </div>
+                    <div class="mt-3" id="underline">
+                        Fresh green asparagus, <br> bunch
+                    </div>
+                    <div class="mt-2 opacity-50"> 300g
+                    </div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="favorite">
+                            <i class="far fa-heart">
+                            </i>
+                        </div>
+                        <button style="background-color: #F5F7F8;" id="addtocart"
+                            class=" border-0 ms-3 rounded-2  py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                            +
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+
+<!-- section-types -->
+<div class="container text-center py-5">
+    <h2 class="fw-bold mb-4">Shop by lifestyle</h2>
+    <div class="row justify-content-center g-4">
+        <!-- Only the first item is visible on mobile screens -->
+        <div class="col-12 d-block d-md-none mb-4">
+            <div class="d-flex align-items-center justify-content-center rounded-circle"  style="background-color: #fff4e6;  height: 180px;  width: 180px; margin: 0 auto 20px;">
+                <img src="./images/gluten-free.png" alt="Gluten-Free icon" width="90">
+            </div>
+            <h5 class="fw-bold">Gluten-Free</h5>
+            <p class="text-muted">Foods that don't contain gluten</p>
+        </div>
+        
+        <!-- Hide the remaining items on mobile screens -->
+        <div class="col-12 col-md-3 d-none d-md-block">
+            <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color: #fff4e6;  height: 180px;  width: 180px; margin: 0 auto 20px;">
+                <img src="./images/gluten-free.png" alt="Gluten-Free icon" width="90">
+            </div>
+            <h5 class="fw-bold">Gluten-Free</h5>
+            <p class="text-muted">Foods that don't contain gluten</p>
+        </div>
+        <div class="col-12 col-md-3 d-none d-md-block">
+            <div class="d-flex align-items-center justify-content-center rounded-circle"  style="background-color: #e6f7f1; height: 180px;  width: 180px; margin: 0 auto 20px;">
+                <img src="./images/broccoli.png" alt="Vegan icon" width="60">
+            </div>
+            <h5 class="fw-bold">Vegan</h5>
+            <p class="text-muted">Vegetable based goodness</p>
+        </div>
+        <div class="col-12 col-md-3 d-none d-md-block">
+            <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color:#e6f0ff; height: 180px;  width: 180px; margin: 0 auto 20px;">
+                <img src="./images/leaf.png" alt="Plant based icon" width="90">
+            </div>
+            <h5 class="fw-bold">Plant based</h5>
+            <p class="text-muted">Based on herbal ingredients</p>
+        </div>
+        <div class="col-12 col-md-3 d-none d-md-block">
+            <div class="d-flex align-items-center justify-content-center rounded-circle"  style="background-color: #ffe6e6; height: 180px;  width: 180px; margin: 0 auto 20px;">
+                <img src="./images/avocado.png" alt="Keto icon" width="90">
+            </div>
+            <h5 class="fw-bold">Keto</h5>
+            <p class="text-muted">Good fats served in food</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- 4 products -->
+<section class="container">
+
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div>
+                <div style="background-color: #a6cddc;" class="overflow-hidden rounded-4" >
+                    <h3 class="px-4 pt-4">Make breakfast <br> healthy and easy</h3>
+                    <div class="d-flex ">
+                        <p class="ps-4">Shop now </p>
+                    <iconify-icon class="pt-1 ps-1 " icon="iconamoon:arrow-right-2-light"></iconify-icon>
+                    </div>
+                    <img class="img-fluid" src="./images/bottles.jpg"  alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="d-flex justify-content-between align-items-center mb-lg-1 mt-md-3 mt-sm-3">
+                <h4>
+                    Special products
+                </h4>
+                <a class="text-muted" href="#">
+                    View all
+                </a>
+            </div>
+            <hr>
+            <div class="d-flex flex-wrap">
+
+                <!-- 01 -->
+                <div class="col-6 col-md-3 position-relative">
+                    <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                    <img class="img-fluid" height="200px" src="./images/Rite.png" width="200px" />
+                    <div class="fw-bold">$18.60</div>
+                    <div class="mt-2" id="underline"> Pure virgin olive oil Basso</div>
+                    <div class="mt-4 opacity-50">1000ml</div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="favorite"><i class="far fa-heart"></i></div>
+                        <button style="background-color:#F5F7F8;" id="addtocart"
+                            class="add-to-cart ms-3 border-0 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                            +</button>
+                    </div>
+                </div>
+                <!-- 02 -->
+                <div class="col-6 col-md-3 position-relative">
+                    <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                    <img class="img-fluid" height="200px" src="./images/bbq.png" width="200px" />
+                    <div class="fw-bold">$9.15</div>
+                    <div class="mt-2" id="underline"> Fresh pork butt steaks <br> with rosemary</div>
+                    <div class="mt-1 opacity-50">500g</div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="favorite"><i class="far fa-heart"></i></div>
+                        <button style="background-color:#F5F7F8;" id="addtocart"
+                            class="add-to-cart ms-3 border-0 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                            +</button>
+                    </div>
+                </div>
+                <!-- 03 -->
+                <div class="col-6 col-md-3 position-relative">
+                    <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                    <img class="img-fluid" height="200px" src="./images/orange.png" width="200px" />
+                    <div class="fw-bold">$3.40</div>
+                    <div class="mt-2" id="underline">Fresh red grapefruit</div>
+                    <div class="mt-4 opacity-50">1kg</div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="favorite"><i class="far fa-heart"></i></div>
+                        <button style="background-color:#F5F7F8;" id="addtocart"
+                            class="add-to-cart ms-3 border-0 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                            +</button>
+                    </div>
+                </div>
+                <!-- 04 -->
+                <div class="col-6 col-md-3 position-relative">
+                    <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                    <img class="img-fluid" height="200px" src="./images/cheese-with-cream.png" width="200px" />
+                    <div class="fw-bold">$2.59</div>
+                    <div class="mt-2" id="underline">Soft creme cheese <br> with greens Exquisa</div>
+                    <div class="mt-1 opacity-50">150</div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="favorite"><i class="far fa-heart"></i></div>
+                        <button style="background-color:#F5F7F8;" id="addtocart"
+                            class="add-to-cart border-0 ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                            +</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- section -->
+<div class="container mt-5">
+    <h2 class="py-2">Recipes</h2>
+    <div class="row">
+        <!-- Recipes Section -->
+        <div class="col-md-5 col-12 mb-4 mb-md-0">
+           
+
+            <!-- Recipe 1 -->
+            <div class="d-flex  mb-3">
+                <div class="col-4">
+                    <img src="./images/01.jpg" class="w-100 img-fluid rounded"
+                        alt="Garden salad with a mix of lettuce, cucumber and tomato">
+                </div>
+                <div class="col-8">
+                    <h5 class="ps-2 ">Garden salad with a mix of lettuce, cucumber and tomato</h5>
+                    <div class="d-flex align-items-center">
+                        <iconify-icon class="ps-2" icon="ph:clock-light" width="16px" height="16px"></iconify-icon>
+                        <span class="ps-1">30 min</span>
+                        <iconify-icon class="ps-2" icon="akar-icons:thunder" width="16px"
+                            height="16px"></iconify-icon> <span class="ps-1">Easy</span>
+                        <iconify-icon class="ps-2" icon="icon-park-twotone:cooking-pot" width="16px"
+                            height="16px"></iconify-icon> <span class="ps-1">4 por</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Recipe 2 -->
+            <div class="d-flex flex-wrap mb-3">
+                <div class="col-4">
+                    <img src="./images/02.jpg" class="w-100 img-fluid rounded"
+                        alt="Raspberry fresh lemonade with lemon, strawberry syrup and mint">
+                </div>
+                <div class="col-8">
+                    <h5 class="ps-2">Raspberry fresh lemonade with lemon, strawberry syrup and mint</h5>
+                    <div class="d-flex align-items-center">
+                        <iconify-icon class="ps-2" icon="ph:clock-light" width="16px" height="16px"></iconify-icon>
+                        <span class="ps-1">50 min</span>
+                        <iconify-icon class="ps-2" icon="akar-icons:thunder" width="16px"
+                            height="16px"></iconify-icon> <span class="ps-1">Hard</span>
+                        <iconify-icon class="ps-2" icon="icon-park-twotone:cooking-pot" width="16px"
+                            height="16px"></iconify-icon> <span class="ps-1">8 por</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 3 -->
+            <div class="d-flex flex-wrap mb-4">
+                <div class="col-4">
+                    <img src="./images/03.jpg" class="w-100 img-fluid rounded"
+                        alt="Penne pasta with spinach and zucchini in a creamy sauce">
+                </div>
+                <div class="col-8">
+                    <h5 class="ps-2">Penne pasta with spinach and zucchini in a creamy sauce</h5>
+                    <div class="d-flex align-items-center">
+                        <iconify-icon class="ps-2" icon="ph:clock-light" width="16px" height="16px"></iconify-icon>
+                        <span class="ps-1">25 min</span>
+                        <iconify-icon class="ps-2" icon="akar-icons:thunder" width="16px"
+                            height="16px"></iconify-icon> <span class="ps-1">Easy</span>
+                        <iconify-icon class="ps-2" icon="icon-park-twotone:cooking-pot" width="16px"
+                            height="16px"></iconify-icon> <span class="ps-1">2 por</span>
+                    </div>
+                </div>
+            </div>
+
+            <a class="text-black text-decoration-none" href="#">View all ></a>
+        </div>
+
+        <!-- Cookbook Section -->
+
+        <div class="col-md-7 col-lg-7 col-sm-12  border border-1 rounded-4">
+            <div class="p-3">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div>
+                            <img src="images/book-cover.jpg" class="card-img border rounded-3"
+                                alt="Book cover showing cupcakes with fruits on a wooden board">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="mt-5">
+                            <span class="badge bg-body-secondary text-black-50 rounded-pill mb-3">Cookbook</span>
+                            <h4 class="font-weight-bold mt-2">The Best in Gastronomy</h4>
+                            <p>Author: <strong>Dana Chambers</strong></p>
+                            <p>An exquisite cookbook that takes readers on a culinary journey around the world.
+                                With stunning photography and detailed instructions ...
+                            </p>
+                            <p class="fw-bolder fs-3">$12.40</p>
+                            <a href="#" class="btn btn-dark px-3 py-2 rounded-5 fw-semibold">Shop book <span
+                                    class="fw-bolder">></span> <i class="fas fa-chevron-right"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--  -->
+<div class="container mt-5 mb-5">
+    <div class="row gap-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex bg-body-secondary  rounded-4 ms-lg-3">
+            <img class="img-fluid w-50" src="./images/banner01.png" alt="">
+
+            <div class="mt-4 mt-lg-5  pt-lg-5">
+                <h5 class="fw-bold text-center text-lg-start">
+                    Make online shop easier with <br> our Cartzilla App
+                </h5>
+                <div class="d-flex flex-column flex-lg-row flex-md-row flex-sm-row gap-2 pb-3 mt-4">
+
+                    <a class="text-black text-decoration-none border-0 bg-white rounded-5 p-2  d-flex align-items-center justify-content-center"
+                        href="#">
+                        <img class="img-fluid me-2" src="./images/game_11516179.png" alt="Google Play Icon"
+                            width="20px">
+                        <span class="fw-bold">Google Play</span>
+                    </a>
+                    <a class="text-black text-decoration-none border-0 bg-white rounded-5 p-2    d-flex align-items-center justify-content-center"
+                        href="#">
+                        <img class="img-fluid me-2" src="./images/apple_1532495.png" alt="App Store Icon"
+                            width="20px">
+                       <span class="fw-bold"> App Store</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 d-flex bg-body-secondary rounded-4 ms-lg-3">
+            <img class="img-fluid w-50" src="./images/banner02.png" alt="">
+
+            <div class="mt-5 pt-lg-5">
+                <h5 class="fw-bold">
+                    We'd love to hear <br> what you think!
+                </h5>
+                <div>
+
+                    <a class="text-decoration-none d-flex align-items-center text-black mt-4" href="#">
+                        Give a feedback
+                        <iconify-icon class="mx-2" icon="iconamoon:arrow-right-2-light"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<div style="background-color: #1c1e21;" class="footer text-white py-3">
+    <div class="container ">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h2>Stay in touch with us</h2>
+                <p>Receive the latest updates about our products & promotions</p>
+                <div class="d-flex justify-content-center ">
+                    <input type="email"   class="rounded-5 px-2 py-2 form-control bg-transparent text-white  w-25"  placeholder="You email"  >
+                    <button class="btn btn-danger rounded-5 px-2 py-2 mx-3 ">Subscribe</button>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <hr>
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mb-4">
+                <h5>Cartzilla</h5>
+                <p>With a wide selection of fresh produce, pantry staples, and household essentials, we've got everything you need just a click away.</p>
+                <div>
+                    <iconify-icon class="mx-2 fs-4" icon="mdi:instagram"></iconify-icon>
+                    <iconify-icon class="mx-2 fs-4" icon="ri:facebook-fill"></iconify-icon>
+                    <iconify-icon class="mx-2 fs-4" icon="mingcute:telegram-fill"></iconify-icon>
+                    <iconify-icon class="mx-2 fs-4" icon="ic:baseline-whatsapp"></iconify-icon>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 mb-4">
+                <h5>Categories</h5>
+                <ul class="list-unstyled">
+                    <li class="pt-2"><a class="text-decoration-none text-white" href="#">Weekly sale</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white" href="#">Special price</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white" href="#">Easter is coming</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white" href="#">Italian dinner</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white" href="#">Fresh fruits</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white" href="#">Exotic fruits</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-sm-6 mb-4">
+                <h5>Company</h5>
+                <ul class="list-unstyled">
+                    <li class="pt-2" ><a class="text-decoration-none text-white fw-normal" href="#">Blog and news</a></li>
+                    <li class="pt-2" ><a class="text-decoration-none text-white fw-normal" href="#">About us</a></li>
+                    <li class="pt-2" ><a class="text-decoration-none text-white fw-normal" href="#">FAQ page</a></li>
+                    <li class="pt-2" ><a class="text-decoration-none text-white fw-normal" href="#">Contact us</a></li>
+                    <li class="pt-2" ><a class="text-decoration-none text-white fw-normal" href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-sm-6 mb-4">
+                <h5>Account</h5>
+                <ul class="list-unstyled">
+                    <li class="pt-2"><a class="text-decoration-none text-white fw-normal" href="#">Your account</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white fw-normal" href="#">Shipping & policies</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white fw-normal" href="#">Refunds & replacements</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white fw-normal" href="#">Order tracking</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white fw-normal" href="#">Delivery info</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white fw-normal" href="#">Taxes & fees</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <h5 class="">Customer service</h5>
+                <ul class="list-unstyled">
+                    <li class="pt-2"><a class="text-decoration-none text-white fw-normal" href="#">Payment methods</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white fw-normal" href="#">Money back guarantee</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white fw-normal" href="#">Refunds & replacements</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white fw-normal" href="#">Order tracking</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white fw-normal" href="#">Delivery info</a></li>
+                    <li class="pt-2"><a class="text-decoration-none text-white fw-normal" href="#">Shipping</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© All rights reserved. Made with <i class="fas fa-heart"></i> by Createx Studio</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- 
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.remove('active');
+        });
+    </script> -->
+
+    <script src="./script.js"></script>
 </body>
 </html>
